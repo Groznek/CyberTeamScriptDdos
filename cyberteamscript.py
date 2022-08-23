@@ -628,6 +628,8 @@ def downloadsocks(choice):
 			r = requests.get("https://raw.githubusercontent.com/hookzof/socks5_list/master/proxy.txt",timeout=5)
 			f.write(r.content)
 			f.close()
+		except:
+			pass
 		try:
 			r = requests.get("https://api.proxyscrape.com/?request=getproxies&proxytype=socks5&timeout=10000&country=all",timeout=5)
 			f.write(r.content)
