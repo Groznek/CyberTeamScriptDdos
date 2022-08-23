@@ -603,6 +603,7 @@ def downloadsocks(choice):
 		try:
 			r = requests.get("https://www.proxy-list.download/api/v1/get?type=socks5",timeout=5)
 			f.write(r.content)
+			f.close()
 		except:
 			pass
 		try:
@@ -620,10 +621,27 @@ def downloadsocks(choice):
 		try:
 			r = requests.get("https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt",timeout=5)
 			f.write(r.content)
+			f.close()
 		except:
 			pass
 		try:
 			r = requests.get("https://raw.githubusercontent.com/hookzof/socks5_list/master/proxy.txt",timeout=5)
+			f.write(r.content)
+			f.close()
+		try:
+			r = requests.get("https://api.proxyscrape.com/?request=getproxies&proxytype=socks5&timeout=10000&country=all",timeout=5)
+			f.write(r.content)
+			f.close()
+		except:
+			pass
+		try:
+			r = requests.get("https://www.freeproxychecker.com/result/socks5_proxies.txt",timeout=5)
+			f.write(r.content)
+			f.close()
+		except:
+			pass
+		try:
+			r = requests.get("https://raw.githubusercontent.com/Groznek/socks5-proxy/main/SOCKS5-proxies.txt",timeout=5)
 			f.write(r.content)
 			f.close()
 		except:
